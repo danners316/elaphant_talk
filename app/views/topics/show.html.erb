@@ -1,0 +1,18 @@
+
+
+<h3 id="topic_body">
+
+  <%= @topic.body %>
+</h3>
+
+<p id="topic_name">
+  <b>by:</b>
+  <%= @topic.name %>
+</p>
+
+<%= render 'posts/post' %>
+<%= render 'posts/form' %>
+
+
+<%= link_to 'Edit', edit_topic_path(@topic) %> |
+<%= link_to 'Back', topics_path %>

@@ -1,0 +1,124 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+body{font-family:"Earth's Mightiest Bold";
+font-size: 20px;
+letter-spacing: 0.1em;}
+
+#wrapper{
+    width: 1060px;
+    margin-left: auto;
+    margin-right: auto;}
+
+.fr{float:right}
+.fl{float:left;}
+
+#bar{
+    width:1255px;
+    HEIGHT:150PX;
+    border-top:1px solid #CCC;
+    border-right:4px solid #CCC;
+    border-bottom:4px solid #CCC;
+    border-left:1px solid #CCC;
+    border-radius: 0 0 10px 10px;
+    BACKGROUND-COLOR:#74B3CC;
+    margin-left:auto;
+    margin-right:auto;
+    padding-top:20px;
+}
+
+
+
+#nav{
+    width:656px;
+    HEIGHT:auto;
+    margin-top:0px;
+    margin-left:auto;
+    margin-right:auto;
+}
+#notice{
+    width:656px;
+    padding:2px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: right;
+    color: white !important;
+    font-weight:bold;
+    height:auto;
+}
+
+#nav p{
+    color:white;
+    font-size: 40px;
+    letter-spacing: 0.1em;
+    margin-top: 0;
+    padding:5px;
+    border-bottom:2px solid white;
+}
+
+#nav p:first-letter{font-size: 65px;
+font-weight: bold;}
+
+#bar a{color:white;
+text-decoration: none;
+float:right;
+margin:10px 10px 0 0;}
+
+#bar a:hover{
+    background-color:#74B3CC;
+    color:#ccc;
+}
+
+.post{width:745px;
+padding:5px;
+    border-top:1px solid #74B3CC;
+    border-right:4px solid #74B3CC;
+    border-bottom:4px solid #74B3CC;
+    border-left:1px solid #74B3CC;
+    border-radius: 0 0 10px 10px;
+clear:right;
+margin-bottom:5px;}
+
+.post_name{font-size:16px;
+float:right;}
+
+#topic_body{
+    border-top:1px solid #CCC;
+    border-right:4px solid #CCC;
+    border-bottom:4px solid #CCC;
+    border-left:1px solid #CCC;
+    border-radius: 0 0 0 10px;
+    BACKGROUND-COLOR:#74B3CC;
+    color:white;
+    font-weight: bold;
+    padding:5px;
+    margin-bottom: 0;
+
+}
+
+#topic_name{
+    border-top:1px solid #CCC;
+    border-right:4px solid #CCC;
+    border-bottom:4px solid #CCC;
+    border-left:1px solid #CCC;
+    border-radius: 0 0 10px 10px;
+    font-weight: bold;
+    padding:2px 5px 2px 5px;
+    margin-top:0.5px;
+    max-width:200px;
+    float:right;
+
+}
+
+a:visited{color:#74B3CC}
+

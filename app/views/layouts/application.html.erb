@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Talk</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="bar">
+  <% unless current_user %>
+      <%= link_to 'Register', new_user_path %>
+      <%= link_to "Login", login_path %>
+  <%end %>
+  <% if current_user %>
+      <%= link_to 'Topic', new_topic_path %>
+      <%= link_to "Logout", logout_path %>
+  <% end %>
+<div id="nav">
+
+
+  <p>Elephant Talk</p>
+</div>
+<div id="notice"><%= notice %></div>
+</div>
+<div id="bar2"></div>
+<div id="wrapper">
+
+<%= yield %>
+
+</div>
+</body>
+</html>

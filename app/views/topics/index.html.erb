@@ -1,0 +1,27 @@
+<div class="fr">
+<%= form_tag topics_path, :method => 'get' do %>
+      <%= text_field_tag :search_query, params[:search_query] %>
+      <%= submit_tag "Search A Topic", :name => nil %>
+   <% end %>
+</div>
+
+<% @topics.each do |topic| %>
+
+    <h3><%=link_to topic.body, topic %></h3>
+    <p>
+    By: <%= topic.name %>
+    <%= time_ago_in_words(topic.created_at) %> ago
+    </p>
+    <ul>
+    <% if current_user && current_user.admin %>  
+    <li><%= link_to 'Edit', edit_topic_path(topic) %></li>
+    <li><%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+    <% end %>
+    </ul>
+
+<% end %>
+
+
+<br />
+
+
