@@ -13,10 +13,13 @@ class TopicsController < ApplicationController
   # GET /topics/1
   # GET /topics/1.json
   def show
+    if current_user
     @topic = Topic.find(params[:id])
     @post = Post.new(params[:post])
     @posts = @topic.posts
-
+    else redirect_to root_path,
+    :notice => 'Login To View Topics'
+      end
   end
 
   # GET /topics/new

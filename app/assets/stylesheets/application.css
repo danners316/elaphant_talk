@@ -37,6 +37,8 @@ letter-spacing: 0.1em;}
     padding-top:20px;
 }
 
+.grey{color:#666;}
+.black a{color:black !important}
 
 
 #nav{
@@ -120,5 +122,7 @@ float:right;}
 
 }
 
-a:visited{color:#74B3CC}
+
+a{text-decoration: none;}
+.black a:hover{text-decoration: underline}
 
