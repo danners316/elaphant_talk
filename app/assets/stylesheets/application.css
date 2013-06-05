@@ -11,6 +11,18 @@
  *= require_self
  *= require_tree .
  */
+
+@font-face {
+    font-family: "Earth's Mightiest Bold";
+    src: url('eartmb-webfont.eot');
+    src: url('eartmb-webfont.eot?#iefix') format('embedded-opentype'),
+    url('eartmb-webfont.woff') format('woff'),
+    url('eartmb-webfont.ttf') format('truetype'),
+    url("eartmb-webfont.svg#Earth's Mightiest Bold") format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body{font-family:"Earth's Mightiest Bold";
 font-size: 20px;
 letter-spacing: 0.1em;}

@@ -3,6 +3,7 @@ class TopicsController < ApplicationController
   # GET /topics.json
   def index
     @topics = Topic.search(params[:search_query])
+    @topics = Topic.order("created_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb
