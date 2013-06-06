@@ -6,7 +6,7 @@ class Topic < ActiveRecord::Base
 
   def self.search(search_query)
     if search_query
-      find(:all,:conditions => ['body LIKE ?', "%#{search_query}%"])
+      find(:all,:conditions => ['body ILIKE ?', "%#{search_query}%"])
     else
       find(:all)
     end
