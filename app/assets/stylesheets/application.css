@@ -23,6 +23,17 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "Glametrix";
+    src: url('glametrixlight-webfont.eot');
+    src: url('glametrixlight-webfont.eot?#iefix') format('embedded-opentype'),
+    url('glametrixlight-webfont.woff') format('woff'),
+    url('glametrixlight-webfont.ttf') format('truetype'),
+    url("glametrixlight-webfont.svg#Glametrix") format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body{font-family:"Glametrix";
 font-size: 20px;}
 
@@ -40,7 +51,7 @@ clear:right;
 margin-top:10px;}
 .fl{float:left;}
 
-.no_border:hover{background-color: none;
+.no_border:hover{background-color: white;
 border:none;}
 
 #bar{
