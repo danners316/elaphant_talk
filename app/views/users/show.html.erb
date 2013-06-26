@@ -1,20 +1,33 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @user.name %>
-</p>
-
-<p>
-  <b>Password:</b>
-  <%= @user.password %>
-</p>
-
-<p>
-  <b>Admin:</b>
-  <%= @user.admin %>
-</p>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+ <h2> <%= @user.name %>'s Topics</h2>
+
+
+<h3>My Topics: <%= @topics.count %></h3>
+
+<% @topics.each do |topic| %>
+
+
+     <p></p><span class="black"><%=link_to topic.body, topic %></span>  <span class="grey">
+    With <%= topic.posts.count %> Replies
+    </span></p>
+
+<% end %>
+
+<h3>My Posts on Topics: <%= @posted_topics.count %></h3>
+
+<% @posted_topics.each do |post| %>
+    
+
+
+    <% @parent = Topic.find_by_id post.topic_id  %>
+    <%= link_to @parent.body, @parent %><br />
+    <%= post.body %><br />
+
+        <% end %>
+
+
+
+
+
+

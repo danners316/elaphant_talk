@@ -9,10 +9,10 @@
   <b>by:</b>
   <%= @topic.name %>
 </p>
-
+<ul>
+<li>Topic Created: <%= time_ago_in_words(@topic.created_at) %> ago</li>
+<li>Replies: <%= @topic.posts.count %></li>
+</ul>
 <%= render 'posts/post' %>
 <%= render 'posts/form' %>
 
-
-<%= link_to 'Edit', edit_topic_path(@topic) %> |
-<%= link_to 'Back', topics_path %>

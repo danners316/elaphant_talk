@@ -1,18 +1,33 @@
 <div class="fr">
+  <div class="border">
 <%= form_tag topics_path, :method => 'get' do %>
       <%= text_field_tag :search_query, params[:search_query] %>
       <%= submit_tag "Search A Topic", :name => nil %>
    <% end %>
+  </div>
+   <% unless current_user %>
+  <div id="bar2"><%= render 'sessions/form'  %></div>
+      <% end %>
 </div>
+
+<h2>All Topics</h3>
+
+<table>
+  <tr>
+
+   <td><%= link_to 'Todays Topics: ', topics_todays_path %><%= @todays.count %></td> </tr>
+  <td><%= link_to 'This Months Topics: ', topics_month_path %><%= @month.count %></td>     </tr>
+  <td><%= link_to 'This Years Topics: ', topics_year_path %> <%= @this_years.count %></td>
+  </tr>
+</table>
 
 <% @topics.each do |topic| %>
 
-    <h3 class="black"><%=link_to topic.body, topic %></h3>
-    <p class="grey">
+    <span class="black"><%=link_to topic.body, topic %></span>
+    <span class="grey">
     By: <%= topic.name %>
-    <%= time_ago_in_words(topic.created_at) %> ago<br />
-    ______________
-    </p>
+    <%= time_ago_in_words(topic.created_at) %> ago
+    </span>
     <ul>
     <% if current_user && current_user.admin %>  
     <li><%= link_to 'Edit', edit_topic_path(topic) %></li>

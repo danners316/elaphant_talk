@@ -2,13 +2,14 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
   def index
-    @topics = Topic.search(params[:search_query])
-    @topics = Topic.order("created_at DESC")
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @topics }
-    end
+    @topics = Topic.order("created_at DESC")
+    @topics = Topic.search(params[:search_query])
+    @todays = Topic.find(:all, :conditions => [" created_at between ? AND ?", Time.zone.now.beginning_of_day, Time.zone.now.end_of_day])
+    @month = Topic.find(:all, :conditions => [" created_at between ? AND ?", Time.zone.now.beginning_of_month, Time.zone.now.end_of_month])
+    @this_years = Topic.find(:all, :conditions => [" created_at between ? AND ?", Time.zone.now.beginning_of_year, Time.zone.now.end_of_year])
+
+
   end
 
   # GET /topics/1
@@ -16,11 +17,26 @@ class TopicsController < ApplicationController
   def show
     if current_user
     @topic = Topic.find(params[:id])
+    @title = @topic.body
     @post = Post.new(params[:post])
     @posts = @topic.posts
     else redirect_to root_path,
     :notice => 'Login To View Topics'
       end
+  end
+
+  def todays
+    @topics = Topic.find(:all, :conditions => [" created_at between ? AND ?", Time.zone.now.beginning_of_day, Time.zone.now.end_of_day])
+  end
+
+  def month
+    @topics = Topic.find(:all, :conditions => [" created_at between ? AND ?", Time.zone.now.beginning_of_month, Time.zone.now.end_of_month])
+
+  end
+
+  def year
+    @topics = Topic.find(:all, :conditions => [" created_at between ? AND ?", Time.zone.now.beginning_of_year, Time.zone.now.end_of_year])
+
   end
 
   # GET /topics/new

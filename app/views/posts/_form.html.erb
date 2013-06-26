@@ -1,6 +1,6 @@
 <%= form_for [@topic, @post] do |f| %>
-    <%= f.text_area :body, :rows => 10, :cols => 40 %>
+    <%= f.text_area :body, :rows => 10, :cols => 80 %>
     <%= f.hidden_field :name, :value => "#{current_user.name}" %>
     <%= f.hidden_field :topic_id, :value => "#{@topic.id}" %>
-    <%= submit_tag "Create" %>
+    <%= image_submit_tag ("buttonpost.png") %>
 <% end %>

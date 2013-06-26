@@ -1,7 +1,11 @@
 Talk::Application.routes.draw do
+
+  get "topics/todays"
+  get "topics/month"
+  get "topics/year"
   resources :topics do
   resources :posts, :only => [:create]
-end
+  end
 
   resources :users
 
@@ -9,6 +13,8 @@ end
 
   match '/login' => "sessions#new", :as => "login"
   match '/logout' => "sessions#destroy", :as => "logout"
+
+
 
 
 

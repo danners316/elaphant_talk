@@ -1,0 +1,37 @@
+<div class="fr">
+  <div class="border">
+    <%= form_tag topics_path, :method => 'get' do %>
+        <%= text_field_tag :search_query, params[:search_query] %>
+        <%= submit_tag "Search A Topic", :name => nil %>
+    <% end %>
+  </div>
+  <% unless current_user %>
+      <div id="bar2"><%= render 'sessions/form'  %></div>
+  <% end %>
+</div>
+
+<h2>This Months Topics</h3>
+  <div class="frcr"><%= link_to '<-- Return To All Topics', root_path %> </div>
+
+
+  <% @topics.each do |topic| %>
+
+      <span class="black"><%=link_to topic.body, topic %></span>
+    <span class="grey">
+    By: <%= topic.name %>
+      <%= time_ago_in_words(topic.created_at) %> ago
+    </span>
+      <ul>
+        <% if current_user && current_user.admin %>
+            <li><%= link_to 'Edit', edit_topic_path(topic) %></li>
+            <li><%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        <% end %>
+      </ul>
+
+
+  <% end %>
+
+
+
+  <br />
+

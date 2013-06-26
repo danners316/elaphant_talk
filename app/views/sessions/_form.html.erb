@@ -1,0 +1,13 @@
+<%= form_tag sessions_path do %>
+
+      <h3 class="zero">Name & Password to Login</h3>
+      <span class="fr"><%= text_field_tag :name %></span>
+
+
+      <span class="fr"><%= password_field_tag :password %></span>
+
+
+
+      <%= image_submit_tag ("button.png") %>
+
+<% end %>

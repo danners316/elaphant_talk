@@ -13,12 +13,13 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    if current_user
     @user = User.find(params[:id])
+    @topics = Topic.find(:all, :conditions => { :name => current_user.name })
+    @posted_topics = Post.find(:all, :conditions => { :name => current_user.name })
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @user }
-    end
+    else redirect_to root_path, :notice => 'You must be logged in to view profiles'
+   end
   end
 
   # GET /users/new

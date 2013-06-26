@@ -23,21 +23,30 @@
     font-style: normal;
 }
 
-body{font-family:"Earth's Mightiest Bold";
-font-size: 20px;
-letter-spacing: 0.1em;}
+body{font-family:"Glametrix";
+font-size: 20px;}
 
 #wrapper{
-    width: 1060px;
+    width: 1078px;
     margin-left: auto;
-    margin-right: auto;}
+    margin-right: auto;
+    border-left:1px solid #74B3CC;
+    padding:0 10px 0 10px;
+}
 
 .fr{float:right}
+.frcr{float:right;
+clear:right;
+margin-top:10px;}
 .fl{float:left;}
+
+.no_border:hover{background-color: none;
+border:none;}
 
 #bar{
     width:1255px;
-    HEIGHT:150PX;
+    min-height: 60px;
+    HEIGHT:auto;
     border-top:1px solid #CCC;
     border-right:4px solid #CCC;
     border-bottom:4px solid #CCC;
@@ -46,41 +55,71 @@ letter-spacing: 0.1em;}
     BACKGROUND-COLOR:#74B3CC;
     margin-left:auto;
     margin-right:auto;
-    padding-top:20px;
+    padding:20px 0 10px 0;
+
+    background-image: url('elephant.png');
+    background-image: url('bg.png');
+    background-repeat:no-repeat;
 }
 
-.grey{color:#666;}
-.black a{color:black !important}
+.grey{color:#666;
+margin-bottom:5px;}
+.black a{color:white !important;
+font-weight:bold;
+    margin-bottom:10px;}
+
+.black {border:1px solid #74B3CC;
+  border-radius: 5px;
+padding:5px;
+background-color: #74B3CC;
+}
 
 
 #nav{
+    font-family: "Earth's Mightiest Bold";
     width:656px;
-    HEIGHT:auto;
     margin-top:0px;
     margin-left:auto;
     margin-right:auto;
 }
 #notice{
-    width:656px;
-    padding:2px;
-    margin-left:auto;
-    margin-right:auto;
-    text-align: right;
     color: white !important;
     font-weight:bold;
-    height:auto;
+    letter-spacing: 0.1em;
 }
 
-#nav p{
+
+table{
+color:white;
+margin:10px 0;
+font-size: 25px;
+    float:right;
+    clear:right;
+    text-align: right;
+
+}
+
+td{
+padding:0 2px ;
+    border:1px solid #74B3CC;
+    border-radius:5px;
+}
+
+tr{padding: 5px;}
+
+table a{color:#74B3CC;
+
+font-size: 25px;}
+
+#nav #heading{
     color:white;
     font-size: 40px;
     letter-spacing: 0.1em;
     margin-top: 0;
     padding:5px;
-    border-bottom:2px solid white;
 }
 
-#nav p:first-letter{font-size: 65px;
+#h{font-size: 65px;
 font-weight: bold;}
 
 #bar a{color:white;
@@ -93,27 +132,61 @@ margin:10px 10px 0 0;}
     color:#ccc;
 }
 
+#bar2{    width: 280px;
+
+    float:right;
+margin-top:10px;
+    border:1px solid #74B3CC;
+    border-radius:5px;
+padding: 2px;}
+
+.zero{margin-top:0}
+
+h2{color:#74B3CC;
+    text-shadow:
+        1px 1px 0 #CCC,
+        1px 1px 0 #CCC,
+        1px 1px 0 #CCC,
+        1px 1px 0 #CCC;
+    font-weight: bold;
+text-decoration: underline;
+letter-spacing: 0.1em;
+font-size: 40px;}
+
+.border{ border:1px solid #74B3CC;
+    border-radius:5px;
+    padding: 5px;}
+
 .post{width:745px;
-padding:5px;
+padding:20px 5px 20px 5px;
     border-top:1px solid #74B3CC;
-    border-right:4px solid #74B3CC;
-    border-bottom:4px solid #74B3CC;
+    border-right:2px solid #74B3CC;
+    border-bottom:2px solid #74B3CC;
     border-left:1px solid #74B3CC;
-    border-radius: 0 0 10px 10px;
+    border-radius:5px;
 clear:right;
 margin-bottom:5px;}
 
+ul li{list-style-type: none;}
+
+.post_body{}
+
 .post_name{font-size:16px;
-float:right;}
+float:right;
+clear:right;}
 
 #topic_body{
     border-top:1px solid #CCC;
-    border-right:4px solid #CCC;
-    border-bottom:4px solid #CCC;
+    border-right:2px solid #CCC;
+    border-bottom:2px solid #CCC;
     border-left:1px solid #CCC;
-    border-radius: 0 0 0 10px;
-    BACKGROUND-COLOR:#74B3CC;
-    color:white;
+    border-radius:5px;
+    color:#74B3CC;
+    text-shadow:
+        1px 1px 0 #CCC,
+        1px 1px 0 #CCC,
+        1px 1px 0 #CCC,
+        1px 1px 0 #CCC;
     font-weight: bold;
     padding:5px;
     margin-bottom: 0;
@@ -137,4 +210,20 @@ float:right;}
 
 a{text-decoration: none;}
 .black a:hover{text-decoration: underline}
+
+#footer{
+    width: 1078px;
+    margin-left: auto;
+    margin-right: auto;
+    border:1px solid #74B3CC;
+    border-radius: 0 0 5px 5px;
+    padding:0 10px 0 10px;
+    BACKGROUND-COLOR:#74B3CC;
+    min-height: 75px;
+    margin-top: 20px;
+    clear:both;
+
+    background-image: url('bg2.png');
+    background-repeat:no-repeat;
+}
 
